@@ -61,19 +61,25 @@ const handleNewCakeSubmission = (newCake) => {
 	setListOfCakes(updatedCakes);
 }
 
-// const [cake, setCake] = useState(Cake);
+const sellCake = (cakeIndex) => {
+	const updatedCakes = [...listOfCakes];
+	updatedCakes[cakeIndex] = {
+	  ...updatedCakes[cakeIndex],
+	  cakesSold: updatedCakes[cakeIndex].cakesSold + 1,
+	};
+	setListOfCakes(updatedCakes);
+  };
 
-// const sellCake = (cakesSold) => {
-// 	cakesSold ++;
-// 	setCake(cake.cakesSold);
-// }
+
+
+
 
 return (
     <>
 		<h1>BNTA BAKERY</h1>
 		<CakeForm onNewCakeSubmission={handleNewCakeSubmission}/>
 		<hr/>
-        <CakeList cakes={listOfCakes} />
+        <CakeList cakes={listOfCakes} onSellCake={sellCake} />
     </>
   )
 }

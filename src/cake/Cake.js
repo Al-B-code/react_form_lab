@@ -1,7 +1,7 @@
 const Cake = ({cake, onButtonClick}) => {
 
   const handleUserClick = () => {
-    onButtonClick(cake.cakesSold)
+    onButtonClick()
   }
 
   return (
